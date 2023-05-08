@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.main-body {
+    min-width: 400px;
+    max-width: 400px;   
+    min-height: 500px;
+    border: 5px solid magenta;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display {
+    border: 5px solid rgb(50, 84, 251);
+    min-height: 80px;
+    min-width: 380px;
+    margin: 5px 0px 10px 0px;
+}
+
+.keypad {
+    min-height: 380px;
+    min-width: 380px;
+    border: 5px solid rgb(50, 84, 251);
+}
