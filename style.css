@@ -65,10 +65,12 @@ button:active {
     background-color: rgb(124, 124, 124);
 }
 
+.ac-operation,
 .math-operation {
     background-color: rgb(242, 207, 161);
 }
 
+.ac-operation:active,
 .math-operation:active {
     background-color: rgb(202, 156, 96);
 }
@@ -78,5 +80,5 @@ button:active {
 }
 
 .eval-operation:active {
-    background-color: rgb(155, 119, 53);
+    background-color: rgb(198, 151, 64);
 }
