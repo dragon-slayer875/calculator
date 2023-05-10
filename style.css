@@ -65,11 +65,13 @@ button:active {
     background-color: rgb(124, 124, 124);
 }
 
+.delete-operation,
 .ac-operation,
 .math-operation {
     background-color: rgb(242, 207, 161);
 }
 
+.delete-operation:active,
 .ac-operation:active,
 .math-operation:active {
     background-color: rgb(202, 156, 96);
