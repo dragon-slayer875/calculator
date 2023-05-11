@@ -1,10 +1,10 @@
-let buttonsList = Array.from(document.querySelectorAll('button'));
-buttonsList.splice(0,2);
+let numberButtonsList = Array.from(document.querySelectorAll('.number'));
+let operationButtonList = Array.from(document.querySelectorAll('.math-operation'));
 
 let allClearButton = document.querySelector('.ac-operation');
 let deleteButton = document.querySelector('.delete-operation');
 
-buttonsList.forEach(element => {element.addEventListener("click", () => {
+numberButtonsList.forEach(element => {element.addEventListener("click", () => {
     if (document.querySelector('.display-text').textContent == 0) {
         document.querySelector('.display-text').textContent = '';
     }
@@ -12,7 +12,17 @@ buttonsList.forEach(element => {element.addEventListener("click", () => {
     }
 )});
 
+operationButtonList.forEach(element => {
+    element.addEventListener("click", () => {
+        document.querySelector('.display-text').textContent += ' ' + element.textContent + ' '; 
+        }
+)});
+
 deleteButton.addEventListener('click', () => {
+    if (document.querySelector('.display-text').textContent.length == 1) {
+        document.querySelector('.display-text').textContent = 0;
+
+    }
     if (document.querySelector('.display-text').textContent == 0) {
         return;
     }
