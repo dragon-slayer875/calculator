@@ -15,12 +15,9 @@ numberButtonsList.forEach(element => {element.addEventListener("click", () => {
 )});
 
 operationButtonList.forEach(element => {
-    // if (document.querySelector('.display-text').textContent.slice(-3, -1) == '88') {
-    //     return;
-    // }
-    // / [*-\/%] /.test(document.querySelector('.display-text').textContent.slice(-3,-1))
     element.addEventListener("click", () => {
-
+        /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))?
+        document.querySelector('.display-text').textContent += '':
         document.querySelector('.display-text').textContent += ' ' + element.textContent; 
         }
 )});
