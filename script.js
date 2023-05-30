@@ -29,7 +29,9 @@ deleteButton.addEventListener('click', () => {
     if (document.querySelector('.display-text').textContent == 0) {
         return;
     }
-    document.querySelector('.display-text').textContent = document.querySelector('.display-text').textContent.slice(0, -1);
+    /\s/.test(document.querySelector('.display-text').textContent.slice(-2))?
+    document.querySelector('.display-text').textContent = document.querySelector('.display-text').textContent.slice(0, -2):
+    document.querySelector('.display-text').textContent = document.querySelector('.display-text').textContent.slice(0, -1);    
 })
     
 allClearButton.addEventListener('click', () => {
