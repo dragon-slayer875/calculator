@@ -8,20 +8,26 @@ numberButtonsList.forEach(element => {element.addEventListener("click", () => {
     if (document.querySelector('.display-text').textContent == 0) {
         document.querySelector('.display-text').textContent = '';
     }
-    document.querySelector('.display-text').textContent += element.textContent; 
+    /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))? 
+    document.querySelector('.display-text').textContent += ' ' + element.textContent: 
+    document.querySelector('.display-text').textContent += element.textContent;
     }
 )});
 
 operationButtonList.forEach(element => {
+    // if (document.querySelector('.display-text').textContent.slice(-3, -1) == '88') {
+    //     return;
+    // }
+    // / [*-\/%] /.test(document.querySelector('.display-text').textContent.slice(-3,-1))
     element.addEventListener("click", () => {
-        document.querySelector('.display-text').textContent += ' ' + element.textContent + ' '; 
+
+        document.querySelector('.display-text').textContent += ' ' + element.textContent; 
         }
 )});
 
 deleteButton.addEventListener('click', () => {
     if (document.querySelector('.display-text').textContent.length == 1) {
         document.querySelector('.display-text').textContent = 0;
-
     }
     if (document.querySelector('.display-text').textContent == 0) {
         return;
