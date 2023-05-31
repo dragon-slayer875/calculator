@@ -1,6 +1,6 @@
 let numberButtonsList = Array.from(document.querySelectorAll('.number'));
 let operationButtonList = Array.from(document.querySelectorAll('.math-operation'));
-
+let result = '';
 let allClearButton = document.querySelector('.ac-operation');
 let deleteButton = document.querySelector('.delete-operation');
 let evalButton = document.querySelector('.eval-operation');
@@ -52,7 +52,12 @@ evalButton.addEventListener('click', () => {
     console.log(operationStack);
     operationStack.forEach((element, index, src) => {
         if (element in operations) {
-            document.querySelector('.display-text').textContent = operations[element](new Number(src[index-1]), new Number(src[index+1]));
+            result = operations[element](new Number(src[index-1]), new Number(src[index+1]));
+            src.splice(0, 3, result);
+            console.log(result);
+            console.log(src);
+            console.log(index);
         }
+        document.querySelector('.display-text').textContent = result;
     });
 })
