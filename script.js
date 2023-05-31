@@ -60,7 +60,7 @@ evalButton.addEventListener('click', () => {
 })
 
 document.querySelector('body').addEventListener('keypress', (e) => {
-    if (!(/[a-zA-Z]/.test(e.key))){
+    if (!(/[a-zA-Z\\=`,';\[\]]/.test(e.key))){
         if (document.querySelector('.display-text').textContent == 0) {
             document.querySelector('.display-text').textContent = '';
         }    
@@ -70,10 +70,15 @@ document.querySelector('body').addEventListener('keypress', (e) => {
             document.querySelector('.display-text').textContent += ' ' + e.key;
         } 
         else {
+            if (e.key == '.') {
+                if (document.querySelector('.display-text').textContent.indexOf('.') >= 0) {
+                    return};
+            } 
             /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))? 
             document.querySelector('.display-text').textContent += ' ' + e.key: 
             document.querySelector('.display-text').textContent += e.key;
         }}
+       
     if (e.key == 'Enter') { 
         let operationStack = document.querySelector('.display-text').textContent.split(' ');
         for (let index = 0; index < operationStack.length; index++) {
