@@ -49,15 +49,12 @@ allClearButton.addEventListener('click', () => {
 
 evalButton.addEventListener('click', () => {
     let operationStack = document.querySelector('.display-text').textContent.split(' ');
-    console.log(operationStack);
-    operationStack.forEach((element, index, src) => {
-        if (element in operations) {
-            result = operations[element](new Number(src[index-1]), new Number(src[index+1]));
-            src.splice(0, 3, result);
-            console.log(result);
-            console.log(src);
-            console.log(index);
+    for (let index = 0; index < operationStack.length; index++) {
+        if (operationStack[index] in operations) {
+            result = operations[operationStack[index]](new Number(operationStack[index-1]), new Number(operationStack[index+1]));
+            operationStack.splice(0, 3, result);
+            index-=1;
         }
-        document.querySelector('.display-text').textContent = result;
-    });
+    }
+    document.querySelector('.display-text').textContent = result;
 })
