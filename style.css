@@ -31,6 +31,7 @@ body {
     min-height: 80px;
     min-width: 380px;
     max-width: 380px;
+    max-height: 80px;
     margin: 15px 0px 7px 0px;
     justify-content: flex-end;
     align-items: flex-end;
