@@ -17,6 +17,12 @@ numberButtonsList.forEach(element => {element.addEventListener("click", () => {
     if (document.querySelector('.display-text').textContent == 0) {
         document.querySelector('.display-text').textContent = '';
     }
+    if (element.textContent == '.') {
+        let operationStack = document.querySelector('.display-text').textContent.split(' ');
+        if (operationStack[operationStack.length - 1].indexOf('.') != -1) {
+            return;
+        }
+    }
     /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))? 
     document.querySelector('.display-text').textContent += ' ' + element.textContent: 
     document.querySelector('.display-text').textContent += element.textContent;
@@ -63,7 +69,7 @@ document.querySelector('body').addEventListener('keypress', (e) => {
     if (!(/[a-zA-Z\\=`,';\[\]]/.test(e.key))){
         if (document.querySelector('.display-text').textContent == 0) {
             document.querySelector('.display-text').textContent = '';
-        }    
+        }  
         if (/[-*+\/%]/.test(e.key)) {
             /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))?
             document.querySelector('.display-text').textContent += '':
@@ -71,8 +77,10 @@ document.querySelector('body').addEventListener('keypress', (e) => {
         } 
         else {
             if (e.key == '.') {
-                if (document.querySelector('.display-text').textContent.indexOf('.') >= 0) {
-                    return};
+                let operationStack = document.querySelector('.display-text').textContent.split(' ');
+                if (operationStack[operationStack.length - 1].indexOf('.') != -1) {
+                    return;
+                }  
             } 
             /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))? 
             document.querySelector('.display-text').textContent += ' ' + e.key: 
