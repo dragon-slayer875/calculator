@@ -58,11 +58,11 @@ evalButton.addEventListener('click', () => {
     for (let index = 0; index < operationStack.length; index++) {
         if (operationStack[index] in operations) {
             result = operations[operationStack[index]](new Number(operationStack[index-1]), new Number(operationStack[index+1]));
-            result = Math.round((result + Number.EPSILON) * 10000) / 10000;
             operationStack.splice(0, 3, result);
             index-=1;
         }
     }
+    result = Math.round((result + Number.EPSILON) * 10000) / 10000;
     document.querySelector('.display-text').textContent = result;
 })
 
@@ -93,11 +93,11 @@ document.querySelector('body').addEventListener('keypress', (e) => {
         for (let index = 0; index < operationStack.length; index++) {
             if (operationStack[index] in operations) {
                 result = operations[operationStack[index]](new Number(operationStack[index-1]), new Number(operationStack[index+1]));
-                result = Math.round((result + Number.EPSILON) * 10000) / 10000;
                 operationStack.splice(0, 3, result);
                 index-=1;
             }
         }
+        result = Math.round((result + Number.EPSILON) * 10000) / 10000;
         document.querySelector('.display-text').textContent = result;
     }   
 })
