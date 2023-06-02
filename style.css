@@ -43,6 +43,9 @@ body {
     font-family: 'Space Mono', monospace;
     font-weight: 400;
     font-size: 40px;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
 }
 
 .keypad {
