@@ -34,25 +34,22 @@ body {
     max-height: 80px;
     margin: 15px 0px 7px 0px;
     text-align: right;
-    /* -ms-overflow-style: none;  
-    scrollbar-width: none; */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
     white-space: nowrap;
     overflow: scroll;
 }
 
-/* .display::-webkit-scrollbar {
+.display::-webkit-scrollbar {
     display: none;
-} */
+}
 
 .display-text {
     margin: 0px;
-    margin: 0px 10px 0px 0px;
+    margin: 20px 10px 0px 0px;
     font-family: 'Space Mono', monospace;
     font-weight: 400;
     font-size: 40px;
-    
-    /* float: right; */
-    
 }
 
 .keypad {

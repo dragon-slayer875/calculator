@@ -66,6 +66,7 @@ evalButton.addEventListener('click', () => {
     }
     result = Math.round((result + Number.EPSILON) * 10000) / 10000;
     document.querySelector('.display-text').textContent = result;
+    document.querySelector('.display').scrollLeft -= document.querySelector('.display').scrollWidth;
 })
 
 document.querySelector('body').addEventListener('keypress', (e) => {
@@ -102,6 +103,7 @@ document.querySelector('body').addEventListener('keypress', (e) => {
         }
         result = Math.round((result + Number.EPSILON) * 10000) / 10000;
         document.querySelector('.display-text').textContent = result;
+        document.querySelector('.display').scrollLeft -= document.querySelector('.display').scrollWidth;
     }   
 })
 
