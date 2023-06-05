@@ -25,7 +25,7 @@ body {
 }
 
 .display {
-    display: flex;
+
     border: 1px solid rgb(255, 255, 255);
     background-color: rgb(100, 140, 113);
     min-height: 80px;
@@ -33,9 +33,16 @@ body {
     max-width: 380px;
     max-height: 80px;
     margin: 15px 0px 7px 0px;
-    justify-content: flex-end;
-    align-items: flex-end;
+    text-align: right;
+    /* -ms-overflow-style: none;  
+    scrollbar-width: none; */
+    white-space: nowrap;
+    overflow: scroll;
 }
+
+/* .display::-webkit-scrollbar {
+    display: none;
+} */
 
 .display-text {
     margin: 0px;
@@ -43,10 +50,9 @@ body {
     font-family: 'Space Mono', monospace;
     font-weight: 400;
     font-size: 40px;
-    display: flex;
-    justify-content: flex-end;
-    white-space: nowrap;
-    overflow: hidden;
+    
+    /* float: right; */
+    
 }
 
 .keypad {

@@ -26,6 +26,7 @@ numberButtonsList.forEach(element => {element.addEventListener("click", () => {
     /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))? 
     document.querySelector('.display-text').textContent += ' ' + element.textContent: 
     document.querySelector('.display-text').textContent += element.textContent;
+    document.querySelector('.display').scrollLeft += document.querySelector('.display').scrollWidth;
     }
 )});
 
@@ -34,7 +35,8 @@ operationButtonList.forEach(element => {
         /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))?
         document.querySelector('.display-text').textContent += '':
         document.querySelector('.display-text').textContent += ' ' + element.textContent; 
-        }
+        document.querySelector('.display').scrollLeft += document.querySelector('.display').scrollWidth;   
+    }
 )});
 
 deleteButton.addEventListener('click', () => {
@@ -75,7 +77,7 @@ document.querySelector('body').addEventListener('keypress', (e) => {
             /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))?
             document.querySelector('.display-text').textContent += '':
             document.querySelector('.display-text').textContent += ' ' + e.key;
-        } 
+            document.querySelector('.display').scrollLeft += document.querySelector('.display').scrollWidth;} 
         else {
             if (e.key == '.') {
                 let operationStack = document.querySelector('.display-text').textContent.split(' ');
@@ -86,6 +88,7 @@ document.querySelector('body').addEventListener('keypress', (e) => {
             /[-*+\/%]/.test(document.querySelector('.display-text').textContent.slice(-1))? 
             document.querySelector('.display-text').textContent += ' ' + e.key: 
             document.querySelector('.display-text').textContent += e.key;
+            document.querySelector('.display').scrollLeft += document.querySelector('.display').scrollWidth;
         }}
        
     if (e.key == 'Enter') { 
